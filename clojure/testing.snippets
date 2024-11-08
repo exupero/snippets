@@ -1,0 +1,10 @@
+snippet rc-test "add RCT block" b
+^:rct/test
+(comment
+  $0)
+endsnippet
+
+snippet rc-runner "add RCT test runner" b
+(binding [clojure.test/*test-out* *out*]
+  (rct/run-ns-tests! *ns*))
+endsnippet
