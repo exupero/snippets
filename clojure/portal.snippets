@@ -1,0 +1,7 @@
+snippet portal "open Portal and add tap" b
+(def p (portal/open))
+#_(portal/close)
+(add-tap #'portal/submit)
+
+(tap>$0)
+endsnippet

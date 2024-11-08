@@ -1,0 +1,10 @@
+snippet dep "Add dependency" b
+            [babashka.deps :as deps])
+(deps/add-deps '{:deps {${1:dependency} {:mvn/version "${2:version}"}}})
+(require '[`!p snip.rv = t[1].replace('/', '.') if len(t[1]) > 0 else ''` :as `!p import re; snip.rv = ' ' + t[1].split('/')[1][0] if re.search(r'/.', t[1]) else ''`])
+endsnippet
+
+snippet main "Add main-style block" b
+(when (= *file* (System/getProperty "babashka.file")
+  $0)
+endsnippet

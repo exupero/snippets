@@ -1,0 +1,23 @@
+snippet reg-event-db "Register event on DB" b
+(rf/reg-event-db ::${1:name}
+  (fn [db ${2:[_ $3]}]
+    $0))
+endsnippet
+
+snippet reg-event-fx "Register event" b
+(rf/reg-event-fx ::${1:name}
+  (fn [${2:{}} ${3:[_ $4]}]
+    $0))
+endsnippet
+
+snippet reg-sub "Register subscription" b
+(rf/reg-sub ::${1:name}
+  (fn [db _]
+    $0))
+endsnippet
+
+snippet reg-fx "Register effect" b
+(rf/reg-fx ::${1:name}
+  (fn [${2:_}]
+    $0))
+endsnippet

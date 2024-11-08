@@ -1,0 +1,33 @@
+snippet mm "Create a MagicMock" w
+MagicMock($1)
+endsnippet
+
+snippet mmrv "Create a MagicMock function" w
+MagicMock(return_value=$1)
+endsnippet
+
+snippet patch "Patch a function"
+with patch("$1"):
+	${VISUAL}
+endsnippet
+
+global !p
+import re
+def aaa_test(snip):
+	name = snip.buffer[snip.line].strip()
+	name = name.replace("'", '')
+	name = re.sub(r'[^A-Za-z0-9_]+', '_', name)
+
+	snip.buffer[snip.line] = ''
+	snip.expand_anon(f'''def test_{name}():
+	# Arrange
+
+	# Act
+
+	# Assert
+	assert False''')
+endglobal
+post_jump "aaa_test(snip)"
+snippet 'test (.+)' "Create test in format Arrange, Act, Assert" br
+`!p snip.rv = match.group(1)`
+endsnippet

@@ -1,0 +1,17 @@
+snippet 'clerk hide' "Hide clerk code" b
+^{::clerk/visibility {:code :hide}}$0
+endsnippet
+
+snippet 'clerk hide r' "Hide clerk code" b
+^{::clerk/visibility {:result :hide}}$0
+endsnippet
+
+snippet 'clerk hide all' "Hide clerk code" b
+^{::clerk/visibility {:code :hide, :result :hide}}$0
+endsnippet
+
+snippet 'clerk ns' "Clerk `ns` form" b
+^{:nextjournal.clerk/visibility {:code :hide, :result :hide}}
+(ns ${1:user}
+  (:require [nextjournal.clerk :as clerk]))$0
+endsnippet
