@@ -16,6 +16,13 @@ snippet reg-sub "Register subscription" b
     $0))
 endsnippet
 
+snippet reg-sub2 "Register subscription" b
+(rf/reg-sub ::${1:name}
+  :<- [::$2]
+  (fn [$3 _]
+    $0))
+endsnippet
+
 snippet reg-fx "Register effect" b
 (rf/reg-fx ::${1:name}
   (fn [${2:_}]
