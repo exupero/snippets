@@ -2,6 +2,12 @@ snippet state "state value and setter" b
 const [$1, set`!p snip.rv = (lambda x: x[0].upper() + x[1:] if len(x) > 0 else '')(t[1])`] = useState($0);
 endsnippet
 
+snippet effect "useEffect" b
+useEffect(() => {
+	$0
+}, [$1]);
+endsnippet
+
 snippet 'effect async' "useAsyncEffect" b
 useAsyncEffect(async () => {
 	$0
