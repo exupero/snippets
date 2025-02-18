@@ -6,7 +6,13 @@ endsnippet
 
 snippet blockfn "convert expression to function body" b
 {
-    return ${1:${VISUAL}}
+  return ${1:${VISUAL}}
+}
+endsnippet
+
+snippet if "wrap block in 'if'" b
+if ($1) {
+  ${VISUAL}
 }
 endsnippet
 
