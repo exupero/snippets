@@ -1,7 +1,7 @@
 snippet prn "Log a value" b
-console.log('---', '${2:$1}', ${1:`!v @d`});
+console.log('%c%s', 'color:mediumseagreen;font-weight:bold', '${2:$1}', ${1:`!v @d`});
 endsnippet
 
 snippet spy "Log a value and return it" i
-(x=>{console.log('---', '`!p snip.rv = t[1].replace('\n', ' ').replace("'", '"')`', x); return x})(${1:${VISUAL}})
+(x=>{console.log('%c%s', 'color:mediumseagreen;font-weight:bold', '`!p snip.rv = t[1].replace('\n', ' ').replace("'", '"')`', x); return x})(${1:${VISUAL}})
 endsnippet
