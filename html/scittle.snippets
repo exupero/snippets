@@ -1,0 +1,43 @@
+snippet scittle "HTML for a Scittle app" b
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/scittle@0.6.22/dist/scittle.js" type="application/javascript"></script>
+    <script type="application/x-scittle">
+      (defn my-alert []
+       (js/alert "You clicked!"))
+      ;; export function to use from JavaScript:
+      (set! (.-my_alert js/window) my-alert)
+    </script>
+  </head>
+  <body>
+    <button onclick="my_alert()">
+      Click me!
+    </button>
+  </body>
+</html>
+endsnippet
+
+snippet 'scittle reagent' "HTML for a Scittle app using Reagent" b
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/scittle@0.6.22/dist/scittle.js" type="application/javascript"></script>
+    <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scittle@0.6.22/dist/scittle.reagent.js" type="application/javascript"></script>
+    <script type="application/x-scittle">
+      (require '[reagent.core :as r]
+               '[reagent.dom :as rdom])
+
+      (def state (r/atom {:clicks 0}))
+
+      (defn my-component []
+       [:div])
+
+      (rdom/render [my-component] (.getElementById js/document "app"))
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+endsnippet
