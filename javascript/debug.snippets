@@ -1,7 +1,15 @@
+global !p
+import vim
+try:
+    prefix = vim.eval('g:logging_prefix')
+except:
+    prefix = ''
+endglobal
+
 snippet prn "Log a value" b
-console.log('%c%s', 'color:mediumseagreen;font-weight:bold', '${2:$1}', ${1});
+console.log('%c%s', 'color:mediumseagreen;font-weight:bold', '`!p snip.rv = prefix`${2:$1}', ${1});
 endsnippet
 
 snippet spy "Log a value and return it" i
-(x=>{console.log('%c%s', 'color:mediumseagreen;font-weight:bold', '`!p snip.rv = t[1].replace('\n', ' ').replace("'", '"')`', x); return x})(${1:${VISUAL}})
+(x=>{console.log('%c%s', 'color:mediumseagreen;font-weight:bold', '`!p snip.rv = prefix + t[1].replace('\n', ' ').replace("'", '"')`', x); return x})(${1:${VISUAL}})
 endsnippet
