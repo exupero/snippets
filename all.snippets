@@ -3,3 +3,13 @@ snippet uuid "Insert a random UUID" b
 if not snip.c:
   snip.rv = str(uuid.uuid4())`
 endsnippet
+
+snippet bbscript "New Babashka script" b
+`!p
+vim.command("setlocal filetype=clojure")
+name = vim.eval("expand('%:t:r')")
+snip.rv = f'#!/usr/bin/env bb\n\n(ns {name})'
+`
+
+$0
+endsnippet
