@@ -1,0 +1,6 @@
+snippet opts "CLI opts" b
+(def cli-opts
+	[$0])
+
+(let [{{:keys [$1]} :options [$2] :arguments} (cli/parse-opts *command-line-args* cli-opts)])
+endsnippet
