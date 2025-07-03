@@ -2,3 +2,7 @@ snippet dirs "Add function to describe fields on an object" b
 def dirs(obj, *ss):
     return [field for field in dir(obj) if all(s in field for s in ss)]
 endsnippet
+
+snippet spy "Log a value and return it" i
+(lambda x: print(f'''---${VISUAL}={x}''') or x)(${VISUAL})
+endsnippet
