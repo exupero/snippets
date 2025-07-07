@@ -1,0 +1,22 @@
+snippet deploy "Deploy to GitHub Pages" b
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the main branch
+      uses: actions/checkout@v4
+      with:
+        ref: main
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: build
+endsnippet
