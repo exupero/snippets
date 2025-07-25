@@ -12,6 +12,8 @@ endsnippet
 
 snippet 'clerk ns' "Clerk `ns` form" b
 ^{:nextjournal.clerk/visibility {:code :hide, :result :hide}}
-(ns ${1:user}
+`!p
+name = vim.eval("expand('%:t:r')")
+`(ns `!p snip.rv = name`
   (:require [nextjournal.clerk :as clerk]))$0
 endsnippet
