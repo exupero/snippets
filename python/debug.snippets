@@ -3,6 +3,10 @@ def dirs(obj, *ss):
     return [field for field in dir(obj) if all(s in field for s in ss)]
 endsnippet
 
+snippet prn "Log a value" b
+print(f'---{${1:${VISUAL}}=}')
+endsnippet
+
 snippet spy "Log a value and return it" i
 (lambda x: print(f'''---${VISUAL}={x}''') or x)(${VISUAL})
 endsnippet
