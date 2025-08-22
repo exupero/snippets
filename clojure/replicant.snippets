@@ -1,0 +1,26 @@
+snippet replicant "Basic Cljs code for using Replicant" b
+`!p
+kebabName = vim.eval("expand('%:t:r')").replace('_', '-')
+`(ns `!p snip.rv = kebabName`
+  (:require [replicant.dom :as r]))
+
+(defn render [{:keys []}]
+  [:h1 "Hello"])
+
+(defn init [store]
+  (swap! store assoc :started-at (js/Date.)))
+
+(defn handle-action [event [action & args]]
+  (case action))
+
+(defn main []
+  (let [store (atom nil)
+        el (js/document.getElementById "app")]
+    (r/set-dispatch! handle-action)
+    (add-watch store ::render
+               (fn [_ _ _ new-state]
+                 (r/render el (render new-state))))
+    (init store)))
+
+(main)
+endsnippet
