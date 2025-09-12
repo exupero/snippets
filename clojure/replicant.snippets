@@ -7,6 +7,8 @@ kebabName = vim.eval("expand('%:t:r')").replace('_', '-')
 (defn render [{:keys []}]
   [:h1 "Hello"])
 
+(defonce store (atom nil))
+
 (defn init [store]
   (swap! store assoc :started-at (js/Date.)))
 
@@ -14,8 +16,7 @@ kebabName = vim.eval("expand('%:t:r')").replace('_', '-')
   (case action))
 
 (defn main []
-  (let [store (atom nil)
-        el (js/document.getElementById "app")]
+  (let [el (js/document.getElementById "app")]
     (r/set-dispatch! handle-action)
     (add-watch store ::render
                (fn [_ _ _ new-state]
