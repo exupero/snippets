@@ -4,13 +4,15 @@ kebabName = vim.eval("expand('%:t:r')").replace('_', '-')
 `(ns `!p snip.rv = kebabName`
   (:require [replicant.dom :as r]))
 
-(defn render [{:keys []}]
+(defn render [{:keys [] :as state}]
   [:h1 "Hello"])
 
 (defonce store (atom nil))
 
 (defn init [store]
   (swap! store assoc :started-at (js/Date.)))
+
+(defonce store (atom nil))
 
 (defn handle-action [event [action & args]]
   (case action))
