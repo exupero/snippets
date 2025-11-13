@@ -1,3 +1,9 @@
+snippet abstract "abstract method" b
+@abc.abstractmethod
+def ${1}(self${2}):
+	raise NotImplementedError("\`$1\` method not implemented")
+endsnippet
+
 snippet 'compd|dict comprehension' "Wrap selection in dict comprehension" ir
 {${3:$2}: ${4:$2} for ${2:item} in ${1:${VISUAL:items}}${5: if ${6:$2}}}$0
 endsnippet
