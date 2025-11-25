@@ -1,5 +1,5 @@
 snippet cli "wrap command line args destructuring in cli/parse-opts" i
-{{:keys []} :options ${VISUAL/ \*command-line-args\*//} :arguments} (cli/parse-opts *command-line-args* cli-opts)
+{{:keys []} :options ${VISUAL:[]/ \*command-line-args\*//} :arguments} (cli/parse-opts *command-line-args* cli-opts)
 endsnippet
 
 snippet multi "repeatable CLI option" b
