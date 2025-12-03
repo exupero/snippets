@@ -86,20 +86,6 @@ snippet timeit "Time the execution of the selected expression" b
 timeit.timeit(lambda: ${VISUAL})
 endsnippet
 
-snippet timer "Define a context manager that reports body execution time" b
-from contextlib import contextmanager
-import time
-
-@contextmanager
-def timer(label):
-	start = time.monotonic_ns()
-	try:
-		yield
-	finally:
-		end = time.monotonic_ns()
-		print(f'{label} took {(end - start)/1e9:.2f} seconds')
-endsnippet
-
 snippet try "Wrap code in a try block"
 try:
 	${VISUAL}

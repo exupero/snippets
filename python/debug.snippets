@@ -10,20 +10,3 @@ endsnippet
 snippet spy "Log a value and return it" i
 (lambda x: print(f'''---${VISUAL}={x}''') or x)(${VISUAL})
 endsnippet
-
-snippet trace "Tracer context manager" b
-import contextlib, sys, test.support, trace
-
-@contextlib.contextmanager
-def tracer(file):
-    if file:
-        tracer = trace.Trace(ignoredirs=[sys.prefix], trace=1)
-        with test.support.captured_stdout() as stdout:
-            try:
-                yield tracer
-            finally:
-                with open(file, 'w') as f:
-                    f.write(stdout.getvalue())
-    else:
-        yield None
-endsnippet
