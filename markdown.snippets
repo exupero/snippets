@@ -8,6 +8,13 @@ snippet fenced "Fenced code block" b
 `!v @"`\`\`\`
 endsnippet
 
+snippet fixed "Insert reference to fix commit" b
+[fixed] in [`!p
+url = vim.eval('@*')
+sha = url.split('/')[-1]
+snip.rv += sha[:7] `](`!p snip.rv += url`)
+endsnippet
+
 snippet link "Link"
 [${1:text}](${2:URL})$0
 endsnippet
