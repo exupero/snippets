@@ -1,3 +1,10 @@
+snippet commit "Link to a GitHub commit"
+[`!p
+url = vim.eval('@*')
+sha = url.split('/')[-1]
+snip.rv += sha[:7] `](`!p snip.rv += url`)
+endsnippet
+
 snippet diff "Diff code block" b
 \`\`\`diff
 `!v @"`\`\`\`
@@ -8,7 +15,7 @@ snippet fenced "Fenced code block" b
 `!v @"`\`\`\`
 endsnippet
 
-snippet fixed "Insert reference to fix commit" b
+snippet fixed "Insert a 'fixed' reference to a GitHub commit" b
 [fixed] in [`!p
 url = vim.eval('@*')
 sha = url.split('/')[-1]
