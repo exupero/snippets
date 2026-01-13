@@ -1,0 +1,8 @@
+snippet suggest "Insert Markdown suggestion" b
+\`\`\`suggestion$0
+`!p
+snip.rv += '\n'
+snip.rv = '\n'.join([line[1:] for line in vim.eval('@"').splitlines()])
+`
+\`\`\`
+endsnippet
