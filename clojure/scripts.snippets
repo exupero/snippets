@@ -2,6 +2,11 @@ snippet cli "wrap command line args destructuring in cli/parse-opts" i
 {{:keys []} :options ${VISUAL:[]/ \*command-line-args\*//} :arguments} (cli/parse-opts *command-line-args* cli-opts)
 endsnippet
 
+snippet err "bind *out* to *err*" b
+(binding [*out* *err*]
+	$0)
+endsnippet
+
 snippet multi "repeatable CLI option" b
 :multi true
 :default []
