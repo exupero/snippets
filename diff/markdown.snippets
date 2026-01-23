@@ -6,7 +6,8 @@ snippet suggest "Insert Markdown suggestion" b
 \`\`\`suggestion$0
 `!p
 snip.rv += '\n'
-snip.rv = '\n'.join([line[1:] for line in vim.eval('@"').splitlines()])
+snip.rv = '\n'.join([line[1:] for line in vim.eval('@"').splitlines()
+                     if line.startswith('+') or line.startswith(' ')])
 `
 \`\`\`
 endsnippet
@@ -16,7 +17,8 @@ snippet typo "Insert typo correction" b
 \`\`\`suggestion$0
 `!p
 snip.rv += '\n'
-snip.rv = '\n'.join([line[1:] for line in vim.eval('@"').splitlines()])
+snip.rv = '\n'.join([line[1:] for line in vim.eval('@"').splitlines()
+                     if line.startswith('+') or line.startswith(' ')])
 `
 \`\`\`
 endsnippet
