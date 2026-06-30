@@ -1,12 +1,12 @@
 snippet reg-action "register an action" b
 (nxr/register-action! :$1
-  (fn [state $2]
+  (fn [state$2]
 	  $0))
 endsnippet
 
 snippet reg-effect "register an effect" b
 (nxr/register-effect! :effect/$1
-  (fn [_ store $2]
+  (fn [_ store$2]
     $0))
 endsnippet
 
